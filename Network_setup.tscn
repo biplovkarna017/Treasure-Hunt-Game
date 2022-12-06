@@ -1,0 +1,201 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/Network_setup.gd" type="Script" id=1]
+[ext_resource path="res://Base_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://images/guard_pic2.png" type="Texture" id=3]
+[ext_resource path="res://images/hover.png" type="Texture" id=4]
+[ext_resource path="res://images/normal.png" type="Texture" id=5]
+[ext_resource path="res://images/pressed.png" type="Texture" id=6]
+[ext_resource path="res://Base_font_menu.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/sounds/network_server.ogg" type="AudioStream" id=8]
+[ext_resource path="res://images/disabled.png" type="Texture" id=9]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.482353, 0.482353, 0.482353, 0.666667 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0.286275 )
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Network_setup" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+scale = Vector2( 0.671795, 0.671795 )
+texture = ExtResource( 3 )
+
+[node name="Multiplayer_config" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.1748
+margin_top = -3.1748
+margin_right = 3.1748
+margin_bottom = -3.1748
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Create_server" type="TextureButton" parent="Multiplayer_config"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 171.664
+margin_top = 17.5745
+margin_right = 1101.66
+margin_bottom = 293.574
+rect_scale = Vector2( 0.326085, 0.326085 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Multiplayer_config/Create_server"]
+margin_right = 930.0
+margin_bottom = 276.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.427451, 0.352941, 0.0980392, 1 )
+text = "Create Server"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Join_server" type="TextureButton" parent="Multiplayer_config"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 171.664
+margin_top = 142.575
+margin_right = 1101.66
+margin_bottom = 418.575
+rect_scale = Vector2( 0.326, 0.326 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Multiplayer_config/Join_server"]
+margin_right = 930.0
+margin_bottom = 276.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.427451, 0.352941, 0.0980392, 1 )
+text = "Join Server"
+align = 1
+valign = 1
+
+[node name="Server_ip_addr" type="LineEdit" parent="Multiplayer_config"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -390.0
+margin_top = 60.0
+margin_right = 410.0
+margin_bottom = 160.0
+custom_styles/focus = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 2 )
+align = 1
+placeholder_text = "Enter IP Address"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Guard" type="TextureButton" parent="Multiplayer_config"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -483.301
+margin_top = 17.5746
+margin_right = 446.699
+margin_bottom = 293.575
+rect_scale = Vector2( 0.326, 0.326 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Multiplayer_config/Guard"]
+margin_right = 930.0
+margin_bottom = 276.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.427451, 0.352941, 0.0980392, 1 )
+text = "Guard"
+align = 1
+valign = 1
+
+[node name="Thief" type="TextureButton" parent="Multiplayer_config"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -481.476
+margin_top = 142.575
+margin_right = 448.524
+margin_bottom = 418.575
+rect_scale = Vector2( 0.326, 0.326 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Multiplayer_config/Thief"]
+margin_right = 930.0
+margin_bottom = 276.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.427451, 0.352941, 0.0980392, 1 )
+text = "Thief"
+align = 1
+valign = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_left = 555.0
+margin_top = 616.0
+margin_right = 595.0
+margin_bottom = 656.0
+rect_scale = Vector2( 4.34782, 1.72582 )
+color = Color( 0.243137, 0.243137, 0.243137, 0.423529 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Device_ip_address" type="Label" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -120.0
+margin_bottom = -20.0
+text = "192.168.100.70"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[connection signal="pressed" from="Multiplayer_config/Create_server" to="." method="_on_Create_server_pressed"]
+[connection signal="pressed" from="Multiplayer_config/Join_server" to="." method="_on_Join_server_pressed"]
+[connection signal="pressed" from="Multiplayer_config/Guard" to="." method="_on_Guard_pressed"]
+[connection signal="pressed" from="Multiplayer_config/Thief" to="." method="_on_Thief_pressed"]
